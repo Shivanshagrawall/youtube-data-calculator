@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Data Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+      {
+        "imports": {
+          "config.js": "./config.js",
+          "script.js": "./script.js"
+        }
+      }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>YouTube Data Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="calculator">
+            <h2>Calculate Your YouTube Data Usage</h2>
+            <form id="data-form">
+                <div class="input-group">
+                    <label>Video Quality:</label>
+                    <div class="radio-group">
+                        <div><input type="radio" id="144p" name="quality" value="144p"><label for="144p">144p</label></div>
+                        <div><input type="radio" id="240p" name="quality" value="240p"><label for="240p">240p</label></div>
+                        <div><input type="radio" id="360p" name="quality" value="360p" checked><label for="360p">360p</label></div>
+                        <div><input type="radio" id="480p" name="quality" value="480p"><label for="480p">480p</label></div>
+                        <div><input type="radio" id="720p" name="quality" value="720p"><label for="720p">720p</label></div>
+                        <div><input type="radio" id="1080p" name="quality" value="1080p"><label for="1080p">1080p</label></div>
+                        <div><input type="radio" id="1440p" name="quality" value="1440p"><label for="1440p">1440p (2K)</label></div>
+                        <div><input type="radio" id="4k" name="quality" value="4k"><label for="4k">4K</label></div>
+                        <div><input type="radio" id="8k" name="quality" value="8k"><label for="8k">8K</label></div>
+                    </div>
+                </div>
+                <div class="input-group time-input">
+                    <label for="hours">Time:</label>
+                    <input type="number" id="hours" placeholder="Hours" value="0" min="0">
+                    <input type="number" id="minutes" placeholder="Minutes" value="0" min="0" max="59">
+                </div>
+                <div class="buttons">
+                    <button type="button" id="calculate-btn">Calculate</button>
+                    <button type="button" id="clear-btn">Clear</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="output">
+            <div id="result-box">
+                <p id="result-text">YouTube Data Usage: <span id="data-usage">0</span> MB</p>
+            </div>
+        </section>
+
+        <section id="instructions">
+            <h3>How to Use the YouTube Data Calculator</h3>
+            <ol>
+                <li>Select the video quality you typically watch on YouTube.</li>
+                <li>Enter the number of hours and minutes you watch videos daily.</li>
+                <li>Click the "Calculate" button to estimate your data usage.</li>
+                <li>The estimated data usage will be displayed in the result box.</li>
+            </ol>
+
+            <h4>Approximate Data Usage Per Hour</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quality</th>
+                        <th>Resolution</th>
+                        <th>Approx. Data Usage per Hour</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>144p</td><td>256x144</td><td>50 MB</td></tr>
+                    <tr><td>240p</td><td>426x240</td><td>80 MB</td></tr>
+                    <tr><td>360p</td><td>640x360</td><td>150 MB</td></tr>
+                    <tr><td>480p</td><td>854x480</td><td>300 MB</td></tr>
+                    <tr><td>720p</td><td>1280x720</td><td>1.2 GB</td></tr>
+                    <tr><td>1080p</td><td>1920x1080</td><td>2 GB</td></tr>
+                    <tr><td>1440p (2K)</td><td>2560x1440</td><td>3 GB</td></tr>
+                    <tr><td>4K</td><td>3840x2160</td><td>7 GB</td></tr>
+                    <tr><td>8K</td><td>7680x4320</td><td>15 GB</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 YouTube Data Calculator. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <!-- <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Help</a></li> -->
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
